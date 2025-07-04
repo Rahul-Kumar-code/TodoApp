@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "name": "todo_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd todo-app && npm run dev",
+    "server": "cd backend && nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
