@@ -11,8 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api',userRouter);
 
-const port = 5000;
-const db_path = "mongodb+srv://Rahul:root@mycluster.suned.mongodb.net/todoTasks?retryWrites=true&w=majority&appName=myCluster"
+const port = process.env.PORT || 5000;
+const db_path = process.env.MONGODB_URI;
+
 mongoose.connect(db_path).then(()=>
   {
     app.listen(port, () => {
