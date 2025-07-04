@@ -7,7 +7,7 @@ export default function Tasks() {
 
   //Fetch all tasks
   const fetchTasks = () => {
-    fetch("http://localhost:5000/api/")
+    fetch("https://todoapp-17fc.onrender.com/api/")
       .then((res) => res.json())
       .then((data) => setTasks(data));
   };
@@ -20,7 +20,7 @@ export default function Tasks() {
   const handleAddTask = () => {
     if (!newTask.trim()) return;
 
-    fetch("http://localhost:5000/api/add-task", {
+    fetch("https://todoapp-17fc.onrender.com/api/add-task", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ task: newTask }),
@@ -34,7 +34,7 @@ export default function Tasks() {
   };
   //delete task
   const handleDeleteTask = (taskId) => {
-    fetch(`http://localhost:5000/api/delete-task/${taskId}`, {
+    fetch(`https://todoapp-17fc.onrender.com/api/delete-task/${taskId}`, {
       method: "DELETE",
     })
       .then(() => fetchTasks())
