@@ -43,25 +43,27 @@ export default function Tasks() {
 
   return (
     <div className="w-full mt-6 px-4">
-      <div className="flex items-center gap-2 mb-6 ml-7">
-        <input
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") handleAddTask();
-          }}
-          className="w-full sm:w-full border-2 border-emerald-500 p-4 rounded-full font-semibold"
-          placeholder="Enter a task"
-        />
-        <button
-          onClick={handleAddTask}
-          className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-cyan-500 
-                     px-7 py-4 cursor-pointer text-white border-2 rounded-3xl font-semibold 
-                     hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] hover:scale-105 transition-transform duration-200"
-        >
-          Add
-        </button>
-      </div>
+    <div className="flex flex-col sm:flex-row items-center gap-4 mb-6 mx-4 sm:mx-7">
+  <input
+    value={newTask}
+    onChange={(e) => setNewTask(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") handleAddTask();
+    }}
+    className="w-full border-2 border-emerald-500 p-4 rounded-full font-semibold"
+    placeholder="Enter a task"
+  />
+  <button
+    onClick={handleAddTask}
+    className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-cyan-500
+               px-7 py-4 cursor-pointer text-white border-2 rounded-3xl font-semibold
+               hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] hover:scale-105 
+               transition-transform duration-200"
+  >
+    Add
+  </button>
+</div>
+
 
       <ul className="flex flex-col items-center gap-4">
         {tasks.map((task) => (
